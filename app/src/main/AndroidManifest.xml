@@ -33,7 +33,7 @@
             android:name=".ui.MainActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/NostatusBarTheme"
+
             />
     </application>
 

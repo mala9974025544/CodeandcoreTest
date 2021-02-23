@@ -1,65 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorWhite"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
-        app:elevation="0dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorWhite"
-        >
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@color/colorPrimary"
-                    android:orientation="vertical" />
-<include layout="@layout/dash_banner"/>
-               <!-- <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clMain"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/size_20dp"
-                    android:layout_marginTop="-80dp"
-                    android:layout_marginRight="@dimen/size_20dp"
-                    android:background="@color/colorWhite">
-
-
-                    <include layout="@layout/include_top_dashboard" />
-
-                    <include layout="@layout/include_top_right_dashboard" />
-
-                    <include layout="@layout/include_bottom_dashboard" />
-
-                    <include layout="@layout/include_bottom_right_dashboard" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>-->
-            </LinearLayout>
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
     <include
-        layout="@layout/content_main"/>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <include
+        layout="@layout/dash_banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </LinearLayout>
+</LinearLayout>

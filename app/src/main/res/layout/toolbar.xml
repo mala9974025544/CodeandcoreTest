@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_56dp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:elevation="@dimen/size_4dp"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_gravity="top"
+        android:background="@color/colorAccent">
+
+
+
+        <ImageView
+            android:id="@+id/locationText"
+            android:layout_width="@dimen/size_18dp"
+            android:layout_height="@dimen/size_22dp"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/AppTitle"
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_4dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgShare"
+            android:layout_width="@dimen/size_24dp"
+            android:layout_height="@dimen/size_24dp"
+            android:layout_marginBottom="@dimen/size_10dp"
+            android:layout_marginStart="@dimen/size_20dp"
+            app:srcCompat="@drawable/ic_share_24"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="@dimen/size_16dp"
+            app:tint="@color/colorWhite"
+            tools:visibility="visible"
+            tools:ignore="ContentDescription" />
+
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+</LinearLayout>
+
+
+

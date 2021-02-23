@@ -8,17 +8,10 @@
     android:orientation="vertical">
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/bannerViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:visibility="gone"
-        tools:visibility="visible" />
-
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="400dp"
         app:sliderAnimationDuration="600"
         app:sliderAutoCycleDirection="back_and_forth"
         app:sliderAutoCycleEnabled="false"
@@ -36,6 +29,7 @@
 
     <com.afollestad.viewpagerdots.DotsIndicator
         android:id="@+id/dots"
+        android:layout_marginTop="@dimen/size_60dp"
         android:layout_width="match_parent"
         android:layout_height="46dp"
         android:layout_gravity="center_horizontal|bottom"
