@@ -28,7 +28,7 @@ android {
         }
         debug {
             minifyEnabled false
-            buildConfigField "String", "BASE_URL", "\"https://reqres.in/api/\""
+            buildConfigField "String", "BASE_URL", "\"https://yashmal.com/ws/\""
         }
     }
 
@@ -73,7 +73,22 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-/*Coroutines*/
+
+    /*Coroutines*/
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.ext.coroutines}"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofit}"
+    implementation "com.google.code.gson:gson:${rootProject.ext.gson}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofit}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.retrofit_login}"
+
+    implementation 'androidx.annotation:annotation:1.1.0'
+
+    //LifeCycle
+    implementation "androidx.lifecycle:lifecycle-common:${rootProject.ext.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${rootProject.ext.lifecycle}"
+    implementation "android.arch.lifecycle:extensions:${rootProject.ext.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.lifecycle}"
 
 }

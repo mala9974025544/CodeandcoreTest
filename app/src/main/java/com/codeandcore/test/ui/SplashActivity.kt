@@ -1,8 +1,8 @@
-package com.codeandcore.test
+package com.codeandcore.test.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import com.codeandcore.test.R
 import kotlinx.coroutines.*
 import spencerstudios.com.bungeelib.Bungee
 import kotlin.coroutines.CoroutineContext

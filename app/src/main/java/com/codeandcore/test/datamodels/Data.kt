@@ -1,0 +1,51 @@
+package com.codeandcore.test.datamodels
+
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class Data(
+    val SKU: String?=null,
+    val associated_products: ArrayList<String>?=null,
+    val average_rating: String?=null,
+    val boutique_facebook: String?=null,
+    val boutique_fashionist_image: String?=null,
+    val boutique_id: String?=null,
+    val boutique_instagram: String?=null,
+    val boutique_logo: String?=null,
+    val boutique_name: String?=null,
+    val boutique_phone: String?=null,
+    val boutique_snapchat: String?=null,
+    val boutique_website: String?=null,
+    val boutique_youtube: String?=null,
+    val brand_id: String?=null,
+    val brand_name: String?=null,
+    val configurable_option: ArrayList<ConfigurableOption>?=null,
+    val currency_code: String?=null,
+    val description: String?=null,
+    val final_price: String?=null,
+    val id: String?=null,
+    val image: String?=null,
+    val images: ArrayList<String>?=null,
+    val is_featured: Int?=null,
+    val is_saleable: Int?=null,
+    val item_in_cart: Int?=null,
+    val item_in_wishlist: Int?=null,
+    val meta_description: String?=null,
+    val meta_keywords: String?=null,
+    val meta_title: String?=null,
+    val name: String?=null,
+    val new_from_date: String?=null,
+    val new_to_date: String?=null,
+    val product_type: String?=null,
+    val regular_price: String?=null,
+    val related_products: ArrayList<String>?=null,
+    val remaining_quantity: Int?=null,
+    val reviews: ArrayList<String>?=null,
+    val short_description: String?=null,
+    val show_as_individual: Int?=null,
+    val specification: String?=null,
+    val type: String?=null,
+    val views: Int?=null,
+    val yashmal_delivers: Int?=null
+):Parcelable
