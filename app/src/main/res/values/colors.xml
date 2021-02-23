@@ -8,4 +8,5 @@
     <color name="colortransparent">#80000000</color>
     <color name="greyColor">#9B9B9B</color>
     <color name="bottomNav">#8A8A8A</color>
+    <color name="borderColor">#DDDDDD</color>
 </resources>
