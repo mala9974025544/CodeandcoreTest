@@ -5,6 +5,7 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
+import android.text.SpannableStringBuilder
 import android.text.style.StyleSpan
 import android.widget.TextView
 import android.widget.Toast
@@ -111,7 +112,7 @@ class MainActivity : BaseActivity() {
                 }
 
 
-                //spanbleString(tvBrand)
+
             }
         }
     }
@@ -131,21 +132,14 @@ class MainActivity : BaseActivity() {
             }
         }
     }
-    private fun spanbleString(tvBrand: TextView) {
-        var bufer=StringBuffer()
-        val txt1 = getString(R.string.txt_fulfill)
-        bufer.append(txt1)
-
-
-        val txt2 = getString(R.string.txt_yashMaal)
-        val txtSpannable = SpannableString(txt2)
+    private fun setSpanString(string1: String, string2: String, textView: TextView) {
+        val builder = SpannableStringBuilder()
+        val txtSpannable = SpannableString(string1)
         val boldSpan = StyleSpan(Typeface.BOLD)
-        txtSpannable.setSpan(boldSpan, 13, txt2.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-        bufer.append(txtSpannable)
-
-
-        tvBrand.setText(bufer, TextView.BufferType.SPANNABLE)
+        txtSpannable.setSpan(boldSpan, 0, string1.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        builder.append(txtSpannable)
+        builder.append(string2)
+        textView.setText(builder, TextView.BufferType.SPANNABLE)
     }
 }
 
