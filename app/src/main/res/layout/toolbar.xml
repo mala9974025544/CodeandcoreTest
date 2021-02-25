@@ -8,11 +8,11 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:elevation="@dimen/size_4dp"
+        android:elevation="@dimen/size_8dp"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:layout_gravity="top"
-        android:background="@color/colorAccent">
+        android:background="@color/colorWhite">
 
 
 
@@ -40,7 +40,7 @@
             app:srcCompat="@drawable/ic_share_24"
             android:layout_gravity="center_vertical|end"
             android:layout_marginEnd="@dimen/size_16dp"
-            app:tint="@color/colorWhite"
+            app:tint="@color/colorBlack"
             tools:visibility="visible"
             tools:ignore="ContentDescription" />
 

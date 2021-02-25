@@ -38,4 +38,35 @@
 
 
 	</style>
+
+	<style name="heading1" parent="TextAppearance.AppCompat">
+		<item name="android:textColor">@color/black_alpha_1</item>
+		<item name="android:textSize">@dimen/text_16sp</item>
+		<item name="fontFamily">sans-serif-medium</item>
+	</style>
+	<style name="heading2" parent="TextAppearance.AppCompat">
+		<item name="android:textColor">@color/colorRed</item>
+		<item name="android:textSize">@dimen/text_14sp</item>
+		<item name="fontFamily">sans-serif-medium</item>
+	</style>
+	<style name="heading3" parent="TextAppearance.AppCompat">
+		<item name="android:textColor">@color/colorBlack</item>
+		<item name="android:textSize">@dimen/text_13sp</item>
+		<item name="fontFamily">sans-serif-condensed-medium</item>
+	</style>
+	<style name="heading4" parent="TextAppearance.AppCompat">
+		<item name="android:textColor">@color/colorBlack</item>
+		<item name="android:textSize">@dimen/text_12sp</item>
+		<item name="fontFamily">sans-serif-light</item>
+	</style>
+	<style name="heading5" parent="TextAppearance.AppCompat">
+		<item name="android:textColor">@color/colorWhite</item>
+		<item name="android:textSize">@dimen/text_10sp</item>
+		<item name="fontFamily">sans-serif-light</item>
+	</style>
+	<style name="heading6" parent="TextAppearance.AppCompat">
+		<item name="android:textColor">@color/bottomNav</item>
+		<item name="android:textSize">@dimen/text_10sp</item>
+		<item name="fontFamily">sans-serif-light</item>
+	</style>
 </resources>

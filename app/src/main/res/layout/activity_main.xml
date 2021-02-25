@@ -1,25 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nScrolHoliday"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <include
-        layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-
-    <include
-        layout="@layout/dash_banner"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+    >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <include
+            layout="@layout/dash_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/size_8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frmBanner">
+
+            <RelativeLayout
+                android:id="@+id/rlMain"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:layout_alignParentStart="true"
+                android:id="@+id/tvMainTitle"
+                style="@style/heading1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                android:paddingRight="@dimen/size_3dp"
+                android:layout_toStartOf="@id/imgLike"
+                tools:text="5.511 TACKTICAl ATCT STROM BOOTS ATCT 5.511 TACKTICAl ATCT STROM BOOTS ATCT" />
+
+            <ImageView
+                android:layout_alignParentEnd="true"
+                android:id="@+id/imgLike"
+                android:layout_width="@dimen/size_24dp"
+                android:layout_height="@dimen/size_24dp"
+                android:src="@drawable/ic_like"
+                app:tint="@color/colorPrimary"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/imgLike"
+                    android:id="@+id/tvRate"
+                    style="@style/heading4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="41.23" />
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/heading2"
+                android:id="@+id/tvCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rlMain"
+                tools:text="KWD 99.000" />
+
+            <TextView
+                android:paddingLeft="@dimen/size_4dp"
+                style="@style/heading6"
+                app:layout_constraintTop_toBottomOf="@id/rlMain"
+                android:paddingTop="@dimen/size_4dp"
+                app:layout_constraintLeft_toRightOf="@+id/tvCurrency"
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12dp"
+                tools:text="KWD 1200" />
+
+            <TextView
+                style="@style/heading5"
+                android:padding="@dimen/size_4dp"
+                android:background="@drawable/bg_round_rect"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tvBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_12dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvCurrency"
+                app:layout_constraintTop_toBottomOf="@id/rlMain"
+                tools:text="fulfilledby Yashpal" />
+
+            <TextView
+                style="@style/heading3"
+                android:layout_marginTop="@dimen/size_8dp"
+                tools:text="SKU : TB"
+                android:id="@+id/tvSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+
+                style="@style/heading3"
+                android:layout_marginTop="@dimen/size_8dp"
+                tools:text="Yousuf's Banquit"
+                android:id="@+id/tvSizeType"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:padding="@dimen/size_4dp"
+                android:id="@+id/llmain"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:background="@color/cloudy_blue_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSizeType"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:text="@string/txt_details"
+                    style="@style/heading3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:lines="3"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    tools:text="gjkdf gjkfgj jg fdkjgkdf gjkfjgdf gjfkdg dflkgjdflk gkdfjgkdf gk gflkdjgkd fk hjk fdjhfjds fhdj fjdskhfd jsfhdsj fjsdhfj
+                    fdfhkjdfhjsdhfjdshf"
+                    style="@style/heading6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:paddingBottom="@dimen/size_4dp"
+                    android:paddingEnd="@dimen/size_4dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="@dimen/size_8dp"
+                    android:text="@string/txt_read_more"
+                    style="@style/heading4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llReview"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:background="@color/cloudy_blue_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/llmain"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnReview"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Write Review"
+                    android:layout_margin="@dimen/size_20dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorWhite"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                app:layout_constraintTop_toBottomOf="@+id/llReview"
+                android:id="@+id/btnAddBag"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/colorWhite"
+                android:text="ADD TO BAG"
+                android:layout_marginTop="@dimen/size_8dp"
+                android:layout_marginLeft="@dimen/size_20dp"
+                android:layout_marginRight="@dimen/size_20dp"
+                android:layout_marginBottom="@dimen/size_20dp"
+                android:layout_width="match_parent"
+                android:background="@color/colorWhite"
+                android:layout_height="match_parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>
