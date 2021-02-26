@@ -11,5 +11,11 @@ interface ApiInterface {
         @Query("product_id") product_id: String?
         ): Response<com.codeandcore.test.datamodels.Response>
 
+/*
+    @POST("configurable-options")
+    suspend fun addToBag(
+        @Body loginReqModel: LoginReqModel
+    ): Response<Data<LoginResponse>>
+*/
 
 }
