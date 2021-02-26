@@ -33,9 +33,9 @@
 		<item name="colorAccent">@color/colorAccent</item> <!-- Whatever color you want-->
 	</style>
 	<style name="AppTitle" parent="TextAppearance.AppCompat">
-		<item name="android:textColor">@color/colorWhite</item>
-		<item name="android:textSize">@dimen/text_18sp</item>
-
+		<item name="android:textColor">@color/colorBlack</item>
+		<item name="android:textSize">@dimen/text_14sp</item>
+		<item name="android:fontFamily">sans-serif</item>
 
 	</style>
 

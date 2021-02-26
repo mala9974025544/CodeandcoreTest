@@ -5,14 +5,27 @@
     android:id="@+id/frmBanner"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
     android:layout_marginBottom="@dimen/size_12dp"
     android:orientation="vertical">
 
 
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btnDiscount"
+        android:layout_width="@dimen/size_80dp"
+        android:layout_height="@dimen/size_36dp"
+        android:background="@drawable/bg_oval_rectangle"
+        android:padding="@dimen/size_8dp"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:textColor="@color/colorWhite"
+        android:textAllCaps="true"
+         />
+
     <com.smarteist.autoimageslider.SliderView
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="350dp"
         app:sliderAnimationDuration="600"
         app:sliderAutoCycleDirection="back_and_forth"
         app:sliderAutoCycleEnabled="false"
