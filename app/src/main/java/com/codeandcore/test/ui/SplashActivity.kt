@@ -32,7 +32,6 @@ class SplashActivity : BaseActivity(), CoroutineScope {
 
 
     private fun updateUI() {
-
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()

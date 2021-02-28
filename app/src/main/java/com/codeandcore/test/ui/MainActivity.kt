@@ -12,7 +12,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.observe
 import com.codeandcore.test.R
+import com.codeandcore.test.datamodels.ConfigurableOption
+import com.codeandcore.test.datamodels.Request
 import com.codeandcore.test.datamodels.Response
 import com.codeandcore.test.services.ApiClient
 import com.codeandcore.test.utils.Utils
@@ -25,16 +28,25 @@ import kotlinx.android.synthetic.main.dash_banner.*
 import kotlinx.android.synthetic.main.toolbar.*
 
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity(), View.OnClickListener, OrderItemSuggestionBottomsheet.ListnerForUpdateQty {
 
     private lateinit var shopingViewModel: ShopingViewModel
+    var productId :String= "124"
+    var attibuteBuffer=StringBuffer()
+    var optionBuffer=StringBuffer()
+    lateinit var  bottomDialogFragment : OrderItemSuggestionBottomsheet
+    lateinit var configurableOptionList: ArrayList<ConfigurableOption>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupViewModel()
         getShoppingData()
+        initViews()
 
+    }
 
+    private fun initViews() {
+      btnAddBag.setOnClickListener(this)
     }
 
     private fun setupViewModel() {
@@ -44,8 +56,6 @@ class MainActivity : BaseActivity() {
     }
 
     private fun getShoppingData() {
-
-        var productId = "124"
         var lang = "en"
         var userId = "46"
         var store = "KW"
@@ -69,6 +79,34 @@ class MainActivity : BaseActivity() {
                     }
                     Status.LOADING -> {
                         startAnim()
+
+                    }
+
+                }
+            }
+        }
+    }
+    private fun addToBag(request: Request,attrId : String?) {
+        shopingViewModel.addTobeg(request).observe(this) {
+            it.let { resource ->
+                when (resource.status) {
+                    Status.SUCESS -> {
+                        bottomDialogFragment.stopAnim()
+                        if (resource.data?.isSuccessful!!) {
+                            resource.data.let { it1 ->
+                                attrId?.let { it2 -> bottomDialogFragment.notifyUI(resource.data.body(), it2) }
+                            }
+                        } else {
+                            Utils.showToast(this, it.message.toString(), Toast.LENGTH_LONG)
+                        }
+
+                    }
+                    Status.ERROR -> {
+                        bottomDialogFragment.stopAnim()
+                        Utils.showToast(this, it.message.toString(), Toast.LENGTH_LONG)
+                    }
+                    Status.LOADING -> {
+                        bottomDialogFragment.startAnim()
 
                     }
 
@@ -136,7 +174,8 @@ class MainActivity : BaseActivity() {
 
                 btnDiscount.text = "17 % OFF"
 
-
+                if(!response?.data?.configurable_option.isNullOrEmpty())
+                configurableOptionList=response?.data?.configurable_option!!
             }
         }
     }
@@ -186,5 +225,43 @@ class MainActivity : BaseActivity() {
         }
 
     }
+
+    override fun onClick(view: View?) {
+        when(view?.id ){
+            R.id.btnAddBag->{
+                if (!configurableOptionList.isEmpty()) {
+                     bottomDialogFragment =
+                            OrderItemSuggestionBottomsheet(configurableOptionList)
+                    bottomDialogFragment.setAddToCartLister(this)
+                    bottomDialogFragment.show(supportFragmentManager, "BottomDialogFragment")
+                }
+        }
+        }
+    }
+
+    override fun updateQty(configurableOption: ConfigurableOption, attrId: String?) {
+        var request= Request()
+
+        if(attibuteBuffer.isNotEmpty())
+        attibuteBuffer.append(",")
+
+        attibuteBuffer.append(configurableOption.attribute_id)
+
+        if(optionBuffer.isNotEmpty())
+        optionBuffer.append(",")
+
+        optionBuffer.append(configurableOption.attributes?.get(0)?.option_id)
+
+        request.attribute_id=attibuteBuffer.toString()
+
+        request.option_id=optionBuffer.toString()
+
+        request.product_id=productId
+
+
+       addToBag(request,attrId)
+    }
+
+
 }
 

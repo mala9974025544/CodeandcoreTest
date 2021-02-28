@@ -16,4 +16,5 @@
     <color name="black_alpha_1">#cc000000</color>
     <color name="cloudy_blue_light">#40bbc1ce</color>
     <color name="color_transparent">#ededed</color>
+    <color name="order_list_background">#F4F4F8</color>
 </resources>

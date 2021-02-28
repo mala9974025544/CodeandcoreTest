@@ -5,9 +5,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ConfigurableOption(
-    val attribute_code: String,
-    val attribute_id: String,
-    val attribute_text: String,
-    val attributes: List<Attribute>,
-    val type: String
+    val attribute_code: String?=null,
+    val attribute_id: String?=null,
+    val attribute_text: String?=null,
+    val attributes: List<Attribute>?=null,
+    var is_Selcte:Boolean=false,
+    val type: String?=null
 ):Parcelable
